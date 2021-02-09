@@ -8,7 +8,7 @@ class App extends React.Component
 {
     state = 
     {
-      headerData: ["First Name1","Last Name"], 
+      headerData: ["First Name","Last Name"], 
       peopleAllList: [],
       selectedPerson: [],
       sortOrder: false
