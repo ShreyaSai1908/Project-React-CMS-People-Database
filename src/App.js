@@ -11,7 +11,8 @@ class App extends React.Component
       headerData: ["First Name","Last Name"], 
       peopleAllList: [],
       selectedPerson: [],
-      sortOrder: false
+      sortOrder: false,
+      delRespone: 0
     }
 
     componentDidMount() 
@@ -41,6 +42,18 @@ class App extends React.Component
 
     deletePerson = (person) => {
 
+          const url ='https://localhost:44346/api/React/'+person.personID;
+          
+          fetch(url,{method: 'delete'})
+            .then((result) => result.status)
+            .then((result) => 
+              {
+                this.setState
+                ({
+                  delResponse: result
+                })
+              })    
+          
           var array = this.state.peopleAllList
           var index = array.indexOf(person)     
           if (index !== -1) {
@@ -50,7 +63,15 @@ class App extends React.Component
      };
 
      handleSubmit = (person) => {
-      this.setState({peopleAllList: [...this.state.peopleAllList, person]})
+
+      const url ='https://localhost:44346/api/React/' 
+      
+      fetch(url, { method: 'POST',
+        body: JSON.stringify(person), 
+        headers:{ 'Content-Type': 'application/json' } })
+        .catch(error => console.error('Error:', error))
+        .then(response => this.setState({peopleAllList: [...this.state.peopleAllList, person]})); 
+
     }; 
     
     render()
