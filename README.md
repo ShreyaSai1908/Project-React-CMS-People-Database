@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# About this Project
+
+This project is about building a React Single Page Application (SPA) that serves as a Control & Manage System (CMS) for the people database backend. The people database ASP.Net MVC project will be used to provide the data. The page will have a list of people, which when clicked on will show detailed information about that person (their name, city, country & languages). This data would be possible to change and doing so should update the list both on the website but also in the database.
+
+Features:
+• Backend - ASP.NET Core MVC from previous assignment.
+• Create a new controller to be used for your React frontend.
+▪ Actions shall return JSON and/or http status codes only (no views).
+• Use the services you already have created in the previous assignments.
+• Front-End - React
+• One table component that shows all the people in the database.
+▪ Be able to sort the table content by person’s name (with React).
+▪ One details component that shows all the information related to the person selected from the table.
+▪ Details shall have a button to delete selected person.
+▪ One create person component.
+▪ shall retrieve the list of Countries and Cities and make drop down to select from during creation.
+
+# How to setup this Project in your environment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
